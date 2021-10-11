@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.simplilearn.init">
+    <class name="EProduct" table="newproduct">
+        <id name="ID" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="name" type="string" column="name"/>
+        <property name="price" type="big_decimal" column="price"/>
+        <property name="dateAdded" type="timestamp" column="date_added"/>
+
+		<component name="parts" class="com.simplilearn.init.ProductParts">
+			<property name="hdd" column="parts_hdd" type="string"></property>
+			<property name="ram" column="parts_ram" type="string"></property>
+			<property name="cpu" column="parts_cpu" type="string"></property>
+		</component>
+    </class>
+</hibernate-mapping>
