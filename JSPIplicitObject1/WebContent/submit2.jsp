@@ -14,10 +14,9 @@
 	String password= request.getParameter("pass");
 	
 	if(uname.equals("sonam") && password.equals("admin123")){
-%>	
-	<h2>Welcome <%=uname %></h2>	
-<% 
-}
+		session.setAttribute("USER", uname);
+		response.sendRedirect("success.jsp");
+	}
 	else{
  %> 
  	<h3 style="color:red">Wrong User name and password</h3> 
